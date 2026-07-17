@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliance & Export - Taiko Food & Beverage</title>
+  <meta name="description"
+    content="Read about Taiko's export registrations, per-consignment documentation audit trail, and expertise in West African and Nigerian trade law compliance.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/fav.jpg">
+
+  <!-- Google Fonts: Outfit & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            taikoBlue: {
+              DEFAULT: '#0A1520',
+              light: '#142538',
+              dark: '#050B10',
+              accent: '#1E3E62'
+            },
+            taikoGold: {
+              DEFAULT: '#C59B27',
+              light: '#E5C058',
+              dark: '#967417',
+              muted: '#A98A3C'
+            },
+            taikoBeige: '#FBF9F4',
+            taikoGray: '#F3F4F6'
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-gold': 'pulseGold 2s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+              '50%': { transform: 'translateY(-15px) rotate(2deg)' },
+            },
+            pulseGold: {
+              '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+              '50%': { opacity: '.7', transform: 'scale(1.05)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Alpine.js (Deferred) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="{ mobileMenuOpen: false, modalOpen: false, modalSuccess: false, selectedCategory: '' }"
+  class="bg-taikoBeige text-slate-800 antialiased overflow-x-hidden font-sans">
+
+  <!-- Inquiry Modal (Alpine.js) -->
+  <div x-show="modalOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-taikoBlue/80 backdrop-blur-md"
+    style="display: none;">
+    <div @click.away="modalOpen = false"
+      class="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-taikoGold/20"
+      x-transition:enter="transition ease-out duration-300 transform"
+      x-transition:enter-start="opacity-0 scale-95 translate-y-4"
+      x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-200 transform"
+      x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+      x-transition:leave-end="opacity-0 scale-95 translate-y-4">
+
+      <!-- Top Accent Bar -->
+      <div class="h-2 bg-gradient-to-r from-taikoGold to-taikoGold-light"></div>
+
+      <!-- Close Button -->
+      <button @click="modalOpen = false"
+        class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition duration-150">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div class="p-8">
+        <h3 class="text-3xl font-bold font-serif text-taikoBlue mb-2">Get in Touch</h3>
+        <p class="text-slate-600 mb-6 text-sm">Send us an inquiry and our FMCG trade specialists will respond within 24
+          hours.</p>
+
+        <!-- Form Success State -->
+        <div x-show="modalSuccess" class="text-center py-8">
+          <div
+            class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h4 class="text-2xl font-bold font-serif text-taikoBlue mb-2">Inquiry Sent Successfully</h4>
+          <p class="text-slate-600 max-w-sm mx-auto mb-6 text-sm">Thank you for contacting Taiko. Our team will review
+            your inquiry and get back to you shortly.</p>
+          <button @click="modalOpen = false; modalSuccess = false"
+            class="px-6 py-2 bg-taikoBlue hover:bg-taikoBlue-light text-white rounded-lg transition duration-200">
+            Close Window
+          </button>
+        </div>
+
+        <!-- Form Fields -->
+        <form x-show="!modalSuccess" @submit.prevent="modalSuccess = true" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Your Name</label>
+              <input type="text" required
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Email
+                Address</label>
+              <input type="email" required
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Company
+                Name</label>
+              <input type="text"
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Interest
+                Category</label>
+              <select x-model="selectedCategory"
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm bg-white">
+                <option value="">General Inquiry</option>
+                <option value="drinks">Soft Drinks & Water</option>
+                <option value="confectionery">Confectionery & Snacks</option>
+                <option value="alcohol">Beers, Wines & Spirits</option>
+                <option value="toiletries">Toiletries & Cosmetics</option>
+                <option value="grocery">Grocery & Ambient</option>
+                <option value="baby">Baby & Child Care</option>
+                <option value="household">Household & Cleaning</option>
+                <option value="pet">Pet Food & Care</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Message</label>
+            <textarea rows="4" required placeholder="Describe your sourcing or export requirements..."
+              class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm resize-none"></textarea>
+          </div>
+
+          <div class="flex items-center space-x-2 py-1">
+            <input type="checkbox" required id="agree"
+              class="rounded border-slate-300 text-taikoGold focus:ring-taikoGold">
+            <label for="agree" class="text-xs text-slate-500">I consent to Taiko processing my details to handle this
+              request.</label>
+          </div>
+
+          <button type="submit"
+            class="w-full py-4 bg-taikoBlue hover:bg-taikoBlue-light text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition duration-200 flex items-center justify-center space-x-2">
+            <span>Send Inquiry</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header id="header-nav"
+    class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-6 border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center group focus:outline-none">
+        <img src="Images/taiko logo.png" alt="Taiko Logo"
+          class="h-10 w-auto object-contain transition duration-300 group-hover:scale-105">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+        <a href="index.html"
+          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">Home</a>
+        <a href="about.html"
+          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">About</a>
+        <a href="sourcing.html"
+          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">What
+          We Source</a>
+        <a href="compliance.html"
+          class="text-taikoGold relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-100 transition duration-200">Compliance
+          & Export</a>
+        <a href="contact.html"
+          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">Contact</a>
+      </nav>
+
+      <!-- Desktop Call to Action -->
+      <div class="hidden md:flex items-center">
+        <a href="contact.html"
+          class="px-6 py-2.5 bg-taikoGold hover:bg-taikoGold-light text-white text-sm font-semibold rounded-lg transition duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 transform">
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button @click="mobileMenuOpen = !mobileMenuOpen"
+        class="md:hidden text-white hover:text-taikoGold focus:outline-none p-1.5 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+            d="M4 6h16M4 12h16M4 18h16" />
+          <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+            d="M6 18L18 6M6 6l12 12" style="display: none;" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 -translate-y-6" x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-6"
+      class="md:hidden absolute top-full left-0 right-0 bg-taikoBlue border-b border-white/10 shadow-2xl"
+      style="display: none;">
+      <div class="px-6 py-8 space-y-4 flex flex-col">
+        <a @click="mobileMenuOpen = false" href="index.html"
+          class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">Home</a>
+        <a @click="mobileMenuOpen = false" href="about.html"
+          class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">About</a>
+        <a @click="mobileMenuOpen = false" href="sourcing.html"
+          class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">What We Source</a>
+        <a @click="mobileMenuOpen = false" href="compliance.html"
+          class="text-taikoGold font-medium text-lg border-b border-white/5 pb-2">Compliance & Export</a>
+        <a @click="mobileMenuOpen = false" href="contact.html"
+          class="text-slate-300 hover:text-white font-medium text-lg pb-2">Contact</a>
+        <a @click="mobileMenuOpen = false" href="contact.html"
+          class="w-full mt-4 py-3 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg transition text-center shadow-lg">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Compliance Hero Section -->
+  <section class="relative h-[45vh] min-h-[350px] flex items-center justify-start overflow-hidden bg-taikoBlue">
+    <!-- Background Image (Lufthansa plane at airport terminal) -->
+    <div class="absolute inset-0 z-0">
+      <img src="Images/1200.jpg" alt="Lufthansa Airbus A380 at airport terminal"
+        class="w-full h-full object-cover opacity-30 object-center scale-105" id="compliance-hero-img">
+      <!-- Dark Blue Overlay Gradients -->
+      <div class="absolute inset-0 bg-gradient-to-t from-taikoBlue via-taikoBlue/75 to-transparent"></div>
+    </div>
+    <!-- Content overlay -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-16 text-left">
+      <div class="scroll-anim opacity-0 max-w-3xl">
+        <span class="text-xs sm:text-sm font-bold text-taikoGold uppercase tracking-[0.25em] font-sans">| Compliance &
+          Export</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mt-3 font-serif">
+          Compliance & Export
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Registrations Section -->
+  <section class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-16 scroll-anim opacity-0 text-left">
+        <h2 class="text-3xl sm:text-4xl font-bold font-serif text-taikoBlue leading-tight">
+          Our Registrations
+        </h2>
+        <p class="text-slate-600 mt-4 text-sm sm:text-base font-light leading-relaxed">
+          Export is a paperwork business. This page sets out the registrations we hold and the paper trail that travels
+          with each shipment.
+        </p>
+      </div>
+
+      <!-- Registration Cards Grid (3 cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card 1: Company Reg -->
+        <div
+          class="scroll-anim opacity-0 bg-white p-6 rounded-2xl border border-slate-200/50 shadow-sm text-left flex flex-col justify-between min-h-[160px] hover:shadow-md transition duration-200">
+          <div>
+            <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">UK Company
+              Registration</span>
+            <h4 class="text-taikoBlue font-bold text-lg mt-2 font-sans leading-tight">Taiko Food and Beverage Ltd</h4>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-between bg-[#FFEED1] text-[#1F3A60] font-bold text-xs px-4 py-2 rounded-lg">
+            <span>No. 15881752</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-taikoGold" fill="currentColor"
+              viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 2: VAT Registration -->
+        <div
+          class="scroll-anim opacity-0 bg-white p-6 rounded-2xl border border-slate-200/50 shadow-sm text-left flex flex-col justify-between min-h-[160px] hover:shadow-md transition duration-200">
+          <div>
+            <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">VAT Registration</span>
+            <h4 class="text-taikoBlue font-bold text-lg mt-2 font-sans leading-tight">GB HMRC (Making Tax Digital)</h4>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-between bg-[#FFEED1] text-[#1F3A60] font-bold text-xs px-4 py-2 rounded-lg">
+            <span>GB 68 504 8627 36</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-taikoGold" fill="currentColor"
+              viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 3: EORI Number -->
+        <div
+          class="scroll-anim opacity-0 bg-white p-6 rounded-2xl border border-slate-200/50 shadow-sm text-left flex flex-col justify-between min-h-[160px] hover:shadow-md transition duration-200">
+          <div>
+            <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">EORI Number</span>
+            <h4 class="text-taikoBlue font-bold text-lg mt-2 font-sans leading-tight">UK Registered Exporter</h4>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-between bg-[#FFEED1] text-[#1F3A60] font-bold text-xs px-4 py-2 rounded-lg">
+            <span>GB15881752000</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-taikoGold" fill="currentColor"
+              viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Per-consignment Documentation Section -->
+  <section class="py-24 bg-taikoGray/30 border-t border-b border-slate-200/40">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-16 scroll-anim opacity-0 text-left">
+        <h2 class="text-3xl sm:text-4xl font-bold font-serif text-taikoBlue leading-tight flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-taikoGold" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <span>Per-consignment Documentation</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+        <!-- Left Side: Worker Image + Overlay -->
+        <div class="lg:col-span-5 scroll-anim opacity-0 flex justify-center">
+          <div class="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-slate-200/50">
+            <img src="Images/what we do section.jpg" alt="Worker inspecting consignments in warehouse"
+              class="w-full h-full object-cover object-center scale-102">
+            <!-- Semi-dark overlay for readability -->
+            <div class="absolute inset-0 bg-[#0A1520]/25"></div>
+            <!-- Glassmorphic paper trail overlay card -->
+            <div
+              class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-6 rounded-xl border border-white/20 shadow-lg text-left">
+              <div class="w-10 h-10 bg-taikoGold/10 text-taikoGold rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h4 class="text-taikoBlue font-bold text-lg font-sans">Paperwork Trail</h4>
+              <p class="text-slate-600 text-xs sm:text-sm mt-1.5 leading-relaxed font-light">
+                Every single case leaving our UK facility is backed by a verified audit trail before it reaches the
+                port.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: 5 Cards List -->
+        <div class="lg:col-span-7 space-y-4">
+
+          <!-- Doc 1 -->
+          <div
+            class="scroll-anim opacity-0 bg-white p-5 rounded-xl border border-slate-200/50 shadow-sm hover:shadow-md transition duration-150 flex items-start space-x-4 text-left">
+            <div
+              class="w-10 h-10 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-taikoBlue font-bold text-base font-sans">Supplier Invoices</h4>
+              <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed font-light">
+                Original trade account invoices from vetted UK suppliers for every product line.
+              </p>
+            </div>
+          </div>
+
+          <!-- Doc 2 -->
+          <div
+            class="scroll-anim opacity-0 bg-white p-5 rounded-xl border border-slate-200/50 shadow-sm hover:shadow-md transition duration-150 flex items-start space-x-4 text-left">
+            <div
+              class="w-10 h-10 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M7 7h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2zm1-10h10M7 14h10" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-taikoBlue font-bold text-base font-sans">Shelf-Life & Batch Tracking</h4>
+              <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed font-light">
+                Batch codes and expiry dates recorded for every case before dispatch. We require minimum shelf life
+                commitments in writing before payment release.
+              </p>
+            </div>
+          </div>
+
+          <!-- Doc 3 -->
+          <div
+            class="scroll-anim opacity-0 bg-white p-5 rounded-xl border border-slate-200/50 shadow-sm hover:shadow-md transition duration-150 flex items-start space-x-4 text-left">
+            <div
+              class="w-10 h-10 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-taikoBlue font-bold text-base font-sans">DEFRA Certificates</h4>
+              <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed font-light">
+                Certificates of Free Sale obtained for food/beverage lines and separate certification for spirits as
+                required by regulatory bodies.
+              </p>
+            </div>
+          </div>
+
+          <!-- Doc 4 -->
+          <div
+            class="scroll-anim opacity-0 bg-white p-5 rounded-xl border border-slate-200/50 shadow-sm hover:shadow-md transition duration-150 flex items-start space-x-4 text-left">
+            <div
+              class="w-10 h-10 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-taikoBlue font-bold text-base font-sans">Freight Documents</h4>
+              <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed font-light">
+                Comprehensive packing lists and Bills of Lading (BOL) specifically tailored for international sea
+                freight.
+              </p>
+            </div>
+          </div>
+
+          <!-- Doc 5 -->
+          <div
+            class="scroll-anim opacity-0 bg-white p-5 rounded-xl border border-slate-200/50 shadow-sm hover:shadow-md transition duration-150 flex items-start space-x-4 text-left">
+            <div
+              class="w-10 h-10 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-taikoBlue font-bold text-base font-sans">NICIS II Digital Readiness</h4>
+              <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed font-light">
+                All documentation is pre-prepared to interface seamlessly with Nigeria's National Single Window digital
+                import requirements.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- CTA Section: Looking for a reliable UK export partner? -->
+  <section id="contact" class="grid grid-cols-1 lg:grid-cols-2 bg-[#0A1520] overflow-hidden min-h-[500px]">
+
+    <!-- Left Column: Copy -->
+    <div class="flex flex-col justify-center px-8 py-20 sm:px-16 lg:px-20 xl:px-28 text-left scroll-anim opacity-0">
+      <h2 class="text-3xl sm:text-4xl lg:text-4xl font-bold font-serif text-white leading-tight">
+        Looking for a reliable <br class="hidden sm:inline">UK export partner?
+      </h2>
+      <p class="text-slate-300 mt-6 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-xl">
+        Whether you're a wholesaler, logistics partner, bank or regulator — we're ready to provide the transparency and
+        trace trail you need.
+      </p>
+      <div class="mt-8">
+        <a href="contact.html"
+          class="px-8 py-4 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 text-center">
+          Contact Us Today
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Static Cargo Port Image -->
+    <div class="relative h-80 lg:h-auto min-h-[350px] lg:min-h-0 overflow-hidden">
+      <img src="Images/footer banner.jpg" alt="Vessel loading at container terminal"
+        class="absolute inset-0 w-full h-full object-cover object-center">
+      <!-- Dark overlay for mobile view to ensure image details are subtle -->
+      <div class="absolute inset-0 bg-[#0A1520]/40 lg:hidden"></div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-taikoBlue-dark text-slate-400 pt-20 pb-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+        <!-- Brand Info -->
+        <div class="space-y-6">
+          <a href="index.html" class="flex items-center group">
+            <img src="Images/taiko logo.png" alt="Taiko Logo" class="h-10 w-auto object-contain">
+          </a>
+          <p class="text-sm font-light leading-relaxed text-slate-400 max-w-xs">
+            UK sourcing and export of premium consumer goods to West Africa. Fully documented. Fully compliant.
+            Delivered with integrity.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex items-center space-x-4">
+            <a href="#" class="text-slate-400 hover:text-white transition duration-200" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+            <a href="mailto:info@taikofoodandbeverage.co.uk"
+              class="text-slate-400 hover:text-white transition duration-200" aria-label="Email">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-6">
+          <h4 class="text-white text-sm font-extrabold uppercase tracking-wider font-sans">Quick Links</h4>
+          <ul class="space-y-3.5 text-sm font-light">
+            <li><a href="index.html" class="hover:text-taikoGold transition duration-150">Home</a></li>
+            <li><a href="about.html" class="hover:text-taikoGold transition duration-150">About</a></li>
+            <li><a href="sourcing.html" class="hover:text-taikoGold transition duration-150">What We Source</a></li>
+            <li><a href="compliance.html" class="hover:text-taikoGold transition duration-150">Compliance & Export</a>
+            </li>
+            <li><a href="contact.html" class="hover:text-taikoGold transition duration-150">Contact</a></li>
+            <li><a href="#" class="hover:text-taikoGold transition duration-150">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Credentials -->
+        <div class="space-y-6">
+          <h4 class="text-white text-sm font-extrabold uppercase tracking-wider font-sans">Our Credentials</h4>
+          <ul class="space-y-4 text-sm font-light">
+            <li>
+              <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">VAT
+                NO.</span>
+              <span class="text-white font-medium tracking-wide">68 504 8627 36</span>
+            </li>
+            <li>
+              <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">COMPANIES
+                HOUSE NO.</span>
+              <span class="text-white font-medium tracking-wide">15881752</span>
+            </li>
+            <li>
+              <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">EORI
+                NUMBER</span>
+              <span class="text-white font-medium tracking-wide">GB15881752000</span>
+            </li>
+            <li>
+              <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">DEFRA
+                STATUS</span>
+              <span class="text-taikoGold font-bold tracking-wider">CERTIFIED EXPORTER</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Registered Office -->
+        <div class="space-y-6">
+          <h4 class="text-white text-sm font-extrabold uppercase tracking-wider font-sans">Registered Office</h4>
+          <div class="text-sm font-light text-slate-400 leading-relaxed space-y-1">
+            <p class="text-white font-medium">Taiko Food and Beverage Ltd</p>
+            <p>7 Crete Hall Road</p>
+            <p>Northfleet, Kent</p>
+            <p>DA11 9GP</p>
+            <p>United Kingdom</p>
+          </div>
+          <div class="pt-2">
+            <a href="https://maps.google.com/?q=7+Crete+Hall+Road,+Northfleet,+Kent,+DA11+9GP" target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center space-x-2 text-taikoGold hover:text-taikoGold-light transition duration-150 text-sm font-medium">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-taikoGold" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>View on Map</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div
+        class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-light space-y-4 sm:space-y-0">
+        <p>&copy; 2026 Taiko Food and Beverage Ltd. All rights reserved.</p>
+        <div class="flex items-center space-x-6">
+          <a href="#" class="hover:text-taikoGold transition duration-150">Privacy Policy</a>
+          <a href="#" class="hover:text-taikoGold transition duration-150">Terms of Use</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- GSAP & Lenis CDN libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+
+  <!-- Custom Main JS -->
+  <script src="main.js"></script>
+</body>
+
+</html>
