@@ -213,8 +213,6 @@
         <a href="compliance.html"
           class="text-taikoGold relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-100 transition duration-200">Compliance
           & Export</a>
-        <a href="contact.html"
-          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">Contact</a>
       </nav>
 
       <!-- Desktop Call to Action -->
@@ -254,18 +252,16 @@
           class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">What We Source</a>
         <a @click="mobileMenuOpen = false" href="compliance.html"
           class="text-taikoGold font-medium text-lg border-b border-white/5 pb-2">Compliance & Export</a>
-        <a @click="mobileMenuOpen = false" href="contact.html"
-          class="text-slate-300 hover:text-white font-medium text-lg pb-2">Contact</a>
-        <a @click="mobileMenuOpen = false" href="contact.html"
+        <button @click="mobileMenuOpen = false; modalOpen = true"
           class="w-full mt-4 py-3 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg transition text-center shadow-lg">
           Get in Touch
-        </a>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- Compliance Hero Section -->
-  <section class="relative h-[45vh] min-h-[350px] flex items-center justify-start overflow-hidden bg-taikoBlue">
+  <section class="relative h-[40vh] sm:h-[45vh] min-h-[300px] sm:min-h-[350px] flex items-center justify-start overflow-hidden bg-taikoBlue">
     <!-- Background Image (Lufthansa plane at airport terminal) -->
     <div class="absolute inset-0 z-0">
       <img src="Images/1200.jpg" alt="Lufthansa Airbus A380 at airport terminal"
@@ -274,11 +270,10 @@
       <div class="absolute inset-0 bg-gradient-to-t from-taikoBlue via-taikoBlue/75 to-transparent"></div>
     </div>
     <!-- Content overlay -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-16 text-left">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16 text-left">
       <div class="scroll-anim opacity-0 max-w-3xl">
-        <span class="text-xs sm:text-sm font-bold text-taikoGold uppercase tracking-[0.25em] font-sans">| Compliance &
-          Export</span>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mt-3 font-serif">
+        <span class="brand-eyebrow">| Compliance & Export</span>
+        <h1 class="brand-hero-title mt-2 sm:mt-3">
           Compliance & Export
         </h1>
       </div>
@@ -286,15 +281,15 @@
   </section>
 
   <!-- Our Registrations Section -->
-  <section class="py-24 bg-white relative">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="py-12 sm:py-20 lg:py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Section Header -->
-      <div class="max-w-3xl mb-16 scroll-anim opacity-0 text-left">
-        <h2 class="text-3xl sm:text-4xl font-bold font-serif text-taikoBlue leading-tight">
+      <div class="max-w-3xl mb-12 sm:mb-16 scroll-anim opacity-0 text-left">
+        <h2 class="brand-section-title text-taikoBlue leading-tight">
           Our Registrations
         </h2>
-        <p class="text-slate-600 mt-4 text-sm sm:text-base font-light leading-relaxed">
+        <p class="brand-body mt-4">
           Export is a paperwork business. This page sets out the registrations we hold and the paper trail that travels
           with each shipment.
         </p>
@@ -332,7 +327,7 @@
           </div>
           <div
             class="mt-4 flex items-center justify-between bg-[#FFEED1] text-[#1F3A60] font-bold text-xs px-4 py-2 rounded-lg">
-            <span>GB 68 504 8627 36</span>
+            <span>504 0527 35</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-taikoGold" fill="currentColor"
               viewBox="0 0 20 20">
               <path fill-rule="evenodd"
@@ -351,7 +346,7 @@
           </div>
           <div
             class="mt-4 flex items-center justify-between bg-[#FFEED1] text-[#1F3A60] font-bold text-xs px-4 py-2 rounded-lg">
-            <span>GB15881752000</span>
+            <span>GB099647052000</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-taikoGold" fill="currentColor"
               viewBox="0 0 20 20">
               <path fill-rule="evenodd"
@@ -591,7 +586,6 @@
             <li><a href="sourcing.html" class="hover:text-taikoGold transition duration-150">What We Source</a></li>
             <li><a href="compliance.html" class="hover:text-taikoGold transition duration-150">Compliance & Export</a>
             </li>
-            <li><a href="contact.html" class="hover:text-taikoGold transition duration-150">Contact</a></li>
             <li><a href="#" class="hover:text-taikoGold transition duration-150">Privacy Policy</a></li>
           </ul>
         </div>
@@ -603,7 +597,7 @@
             <li>
               <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">VAT
                 NO.</span>
-              <span class="text-white font-medium tracking-wide">GB 504 0527 35</span>
+              <span class="text-white font-medium tracking-wide">504 0527 35</span>
             </li>
             <li>
               <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">COMPANIES

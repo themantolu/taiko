@@ -216,8 +216,6 @@
         <a href="compliance.html"
           class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">Compliance
           & Export</a>
-        <a href="contact.html"
-          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">Contact</a>
       </nav>
 
       <!-- Desktop Call to Action -->
@@ -256,10 +254,8 @@
         <a @click="mobileMenuOpen = false" href="sourcing.html"
           class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">What We Source</a>
         <a @click="mobileMenuOpen = false" href="compliance.html"
-          class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">Compliance &
+          class="text-slate-300 hover:text-white font-medium text-lg pb-2">Compliance &
           Export</a>
-        <a @click="mobileMenuOpen = false" href="contact.html"
-          class="text-slate-300 hover:text-white font-medium text-lg pb-2">Contact</a>
         <a @click="mobileMenuOpen = false" href="contact.html"
           class="w-full mt-4 py-3 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg transition text-center shadow-lg">
           Get in Touch
@@ -269,7 +265,7 @@
   </header>
 
   <!-- About Hero Section -->
-  <section class="relative h-[45vh] min-h-[350px] flex items-center justify-start overflow-hidden bg-taikoBlue">
+  <section class="relative h-[40vh] sm:h-[45vh] min-h-[300px] sm:min-h-[350px] flex items-center justify-start overflow-hidden bg-taikoBlue">
     <!-- Background Image (white truck driving at night) -->
     <div class="absolute inset-0 z-0">
       <img src="Images/about.jpg" alt="White semi-truck driving at night"
@@ -278,11 +274,10 @@
       <div class="absolute inset-0 bg-gradient-to-t from-taikoBlue via-taikoBlue/75 to-transparent"></div>
     </div>
     <!-- Content overlay -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-16 text-left">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16 text-left">
       <div class="scroll-anim opacity-0 max-w-3xl">
-        <span class="text-xs sm:text-sm font-bold text-taikoGold uppercase tracking-[0.25em] font-sans">| About
-          Us</span>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mt-3 font-serif">
+        <span class="brand-eyebrow">| About Us</span>
+        <h1 class="brand-hero-title mt-2 sm:mt-3">
           About Taiko
         </h1>
       </div>
@@ -290,13 +285,13 @@
   </section>
 
   <!-- Introduction & Credentials Grid -->
-  <section class="py-24 bg-white relative">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="py-12 sm:py-20 lg:py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
         <!-- Left Column: Copy -->
         <div class="lg:col-span-7 scroll-anim opacity-0">
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-bold font-serif text-taikoBlue leading-tight">
+          <h2 class="brand-section-title text-taikoBlue leading-tight">
             A UK-registered exporter built on <br class="hidden sm:inline">trust, traceability and documentation.
           </h2>
           <div class="mt-6 space-y-6 text-slate-600 text-sm sm:text-base leading-relaxed font-light">
@@ -324,8 +319,8 @@
 
         <!-- Right Column: Registration Card -->
         <div class="lg:col-span-5 scroll-anim opacity-0 mt-8 lg:mt-0">
-          <div class="bg-[#0A1520] p-8 sm:p-10 rounded-2xl border border-white/5 shadow-2xl text-white">
-            <h3 class="text-xl font-bold font-serif text-white border-b border-white/10 pb-4 mb-6">Company Registration
+          <div class="bg-[#0A1520] p-6 sm:p-8 lg:p-10 rounded-2xl border border-white/5 shadow-2xl text-white">
+            <h3 class="text-lg sm:text-xl font-bold font-serif text-white border-b border-white/10 pb-4 mb-6">Company Registration
               Details</h3>
             <ul class="space-y-4 text-xs sm:text-sm">
               <li class="flex flex-col sm:flex-row sm:justify-between border-b border-white/5 pb-3">
@@ -353,7 +348,7 @@
               <li class="flex flex-col sm:flex-row sm:justify-between pb-1">
                 <span class="text-slate-400 font-medium">Email:</span>
                 <a href="mailto:info@taikofoodandbeverage.co.uk"
-                  class="text-taikoGold hover:text-taikoGold-light font-semibold underline mt-1 sm:mt-0 transition duration-150 text-right">
+                  class="text-taikoGold hover:text-taikoGold-light font-semibold underline mt-1 sm:mt-0 transition duration-150 text-right break-all">
                   info@taikofoodandbeverage.co.uk
                 </a>
               </li>
@@ -366,24 +361,23 @@
   </section>
 
   <!-- VeraLife Partnership Row -->
-  <section class="bg-[#0A1520] py-16 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="bg-[#0A1520] py-12 sm:py-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
         <!-- Left side text -->
         <div class="lg:col-span-6 scroll-anim opacity-0">
-          <span class="text-xs sm:text-sm font-extrabold text-taikoGold uppercase tracking-[0.25em] font-sans">Our
-            Consumer Brand</span>
-          <h2 class="text-3xl sm:text-4xl font-bold font-serif text-white mt-2 leading-tight">
+          <span class="brand-eyebrow">Our Consumer Brand</span>
+          <h2 class="brand-section-title text-white mt-2">
             Sourcing Partner of VeraLife
           </h2>
-          <p class="text-slate-300 mt-4 text-sm sm:text-base leading-relaxed font-light">
+          <p class="brand-body text-slate-300 mt-4">
             Taiko Food and Beverage Ltd is the UK sourcing and export partner of VeraLife, a premium consumer goods
             brand serving the Lagos market.
           </p>
           <div class="mt-6">
             <a href="https://veralife.ng" target="_blank" rel="noopener noreferrer"
-              class="inline-block px-6 py-3 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg text-sm transition duration-150 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              class="btn-gold">
               Visit Veralife.Ng
             </a>
           </div>
@@ -411,25 +405,26 @@
   </section>
 
   <!-- Why Choose Taiko -->
-  <section id="why-us" class="py-24 bg-white relative overflow-hidden">
+  <section id="why-us" class="py-12 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
 
     <!-- Visual background accent lines -->
     <div
       class="absolute inset-y-0 right-0 w-1/2 bg-taikoGray/30 pointer-events-none skew-x-12 transform origin-top-right">
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 scroll-anim opacity-0">
-        <span class="text-sm font-extrabold text-taikoGold uppercase tracking-[0.25em]">Our Competitive Edge</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-4xl font-bold font-serif text-taikoBlue mt-3 leading-tight">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 scroll-anim opacity-0">
+        <span class="brand-eyebrow">Our Competitive Edge</span>
+        <h2 class="brand-section-title text-taikoBlue mt-2">
           Why Choose Taiko
         </h2>
-        <p class="text-slate-600 mt-4 text-base font-light leading-relaxed">
+        <p class="brand-body mt-4">
           Built on rigorous documentation from day one, we have developed a logistics process designed to optimize
           performance, eliminate delay risks, and build lasting international business partnerships.
         </p>
+      </div>
       </div>
 
       <!-- Why Grid + Parallax container layout -->
@@ -600,7 +595,6 @@
             </li>
             <li><a href="compliance.html" class="hover:text-taikoGold transition duration-150">Compliance & Export</a>
             </li>
-            <li><a href="contact.html" class="hover:text-taikoGold transition duration-150">Contact</a></li>
             <li><a href="#" class="hover:text-taikoGold transition duration-150">Privacy Policy</a></li>
           </ul>
         </div>
@@ -612,7 +606,7 @@
             <li>
               <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">VAT
                 NO.</span>
-              <span class="text-white font-medium tracking-wide">GB 504 0527 35</span>
+              <span class="text-white font-medium tracking-wide">504 0527 35</span>
             </li>
             <li>
               <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">COMPANIES

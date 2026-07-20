@@ -81,7 +81,7 @@
   <!-- Header Navigation -->
   <header id="header-nav"
     class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-6 border-b border-transparent">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
       <!-- Brand Logo -->
       <a href="index.html" class="flex items-center group focus:outline-none">
@@ -101,15 +101,13 @@
         <a href="compliance.html"
           class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">Compliance
           & Export</a>
-        <a href="contact.html"
-          class="text-taikoGold relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-100 transition duration-200">Contact</a>
       </nav>
 
       <!-- Desktop Call to Action -->
       <div class="hidden md:flex items-center">
         <a href="#enquiry-form"
           class="px-6 py-2.5 bg-taikoGold hover:bg-taikoGold-light text-white text-sm font-semibold rounded-lg transition duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 transform">
-          Trade Enquiry
+          Get in Touch
         </a>
       </div>
 
@@ -143,18 +141,17 @@
         <a @click="mobileMenuOpen = false" href="compliance.html"
           class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">Compliance &
           Export</a>
-        <a @click="mobileMenuOpen = false" href="contact.html"
-          class="text-taikoGold font-medium text-lg pb-2">Contact</a>
+
         <a @click="mobileMenuOpen = false" href="#enquiry-form"
           class="w-full mt-4 py-3 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg transition text-center shadow-lg">
-          Trade Enquiry
+          Get in Touch
         </a>
       </div>
     </div>
   </header>
 
   <!-- Contact Hero Section -->
-  <section class="relative h-[45vh] min-h-[350px] flex items-center justify-start overflow-hidden bg-taikoBlue">
+  <section class="relative h-[40vh] sm:h-[45vh] min-h-[300px] sm:min-h-[350px] flex items-center justify-start overflow-hidden bg-taikoBlue">
     <!-- Background Image (Lufthansa plane at airport terminal) -->
     <div class="absolute inset-0 z-0">
       <img src="Images/1200.jpg" alt="Lufthansa Airbus A380 at airport terminal"
@@ -163,10 +160,10 @@
       <div class="absolute inset-0 bg-gradient-to-t from-taikoBlue via-taikoBlue/75 to-transparent"></div>
     </div>
     <!-- Content overlay -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-16 text-left">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16 text-left">
       <div class="scroll-anim opacity-0 max-w-3xl">
-        <span class="text-xs sm:text-sm font-bold text-taikoGold uppercase tracking-[0.25em] font-sans">| Contact</span>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mt-3 font-serif">
+        <span class="brand-eyebrow">| Contact</span>
+        <h1 class="brand-hero-title mt-2 sm:mt-3">
           Get In Touch
         </h1>
       </div>
@@ -174,15 +171,15 @@
   </section>
 
   <!-- Main Contact Grid -->
-  <section class="py-24 bg-white relative">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="py-12 sm:py-20 lg:py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
         <!-- Left Column: Official Channels Details & Map -->
         <div class="lg:col-span-6 space-y-12">
 
           <div>
-            <h2 class="text-3xl font-bold font-serif text-taikoBlue text-left">Official Channels</h2>
+            <h2 class="brand-section-title text-taikoBlue text-left">Official Channels</h2>
             <div class="mt-8 space-y-6">
 
               <!-- Email Card -->
@@ -198,7 +195,7 @@
                 <div>
                   <h4 class="text-slate-500 font-bold text-xs uppercase tracking-wider">Email Enquiry</h4>
                   <a href="mailto:office@taikofoodandbeverage.co.uk"
-                    class="text-taikoBlue font-bold text-lg hover:text-taikoGold transition duration-150 block mt-1">
+                    class="text-taikoBlue font-bold text-sm sm:text-base md:text-lg hover:text-taikoGold transition duration-150 block mt-1 break-all">
                     office@taikofoodandbeverage.co.uk
                   </a>
                   <span
@@ -221,7 +218,7 @@
                 <div>
                   <h4 class="text-slate-500 font-bold text-xs uppercase tracking-wider">Phone / WhatsApp</h4>
                   <a href="tel:+441474330000"
-                    class="text-taikoBlue font-bold text-lg hover:text-taikoGold transition duration-150 block mt-1">
+                    class="text-taikoBlue font-bold text-base sm:text-lg hover:text-taikoGold transition duration-150 block mt-1">
                     +44 1474 330000
                   </a>
                   <span class="text-slate-500 text-xs mt-1 block">
@@ -243,7 +240,7 @@
                 </div>
                 <div>
                   <h4 class="text-slate-500 font-bold text-xs uppercase tracking-wider">Registered Office</h4>
-                  <p class="text-taikoBlue font-bold text-base mt-1 leading-relaxed max-w-sm">
+                  <p class="text-taikoBlue font-bold text-sm sm:text-base mt-1 leading-relaxed max-w-sm">
                     Taiko Food and Beverage Ltd,<br>
                     7 Crete Hall Road, Northfleet,<br>
                     Kent DA11 9GP, United Kingdom.
@@ -252,7 +249,7 @@
               </div>
 
               <!-- Operating Hours Banner -->
-              <div class="bg-[#FFEED1] p-5 rounded-xl border border-[#FFEED1] flex items-center space-x-4 text-left">
+              <div class="bg-[#FFEED1] p-4 sm:p-5 rounded-xl border border-[#FFEED1] flex items-center space-x-3.5 sm:space-x-4 text-left">
                 <div
                   class="w-10 h-10 rounded-lg bg-[#1F3A60]/10 text-[#1F3A60] flex items-center justify-center flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
@@ -262,7 +259,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-[#1F3A60] font-bold text-sm">Operating Hours</h4>
+                  <h4 class="text-[#1F3A60] font-bold text-xs sm:text-sm">Operating Hours</h4>
                   <p class="text-[#1F3A60]/85 text-xs mt-0.5">Mon – Fri, 9am – 6pm UK Time</p>
                 </div>
               </div>
@@ -272,10 +269,10 @@
 
           <!-- Interactive Dark Theme Leaflet Map -->
           <div class="relative overflow-hidden rounded-2xl shadow-lg border border-slate-200/60" id="map-container">
-            <div id="map" class="w-full h-80 z-10"></div>
+            <div id="map" class="w-full h-64 sm:h-80 z-10"></div>
             <!-- Lat/Lon overlay badge -->
             <div
-              class="absolute bottom-4 left-4 z-[1000] bg-taikoBlue/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg text-white font-sans text-xs font-semibold shadow-lg">
+              class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-[1000] bg-taikoBlue/90 backdrop-blur-md border border-white/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-white font-sans text-[10px] sm:text-xs font-semibold shadow-lg">
               LAT: 51.4503° N | LON: 0.3421° E
             </div>
           </div>
@@ -284,22 +281,22 @@
 
         <!-- Right Column: Trade Enquiry Form -->
         <div class="lg:col-span-6" id="enquiry-form">
-          <div class="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/60 shadow-lg text-left">
-            <h3 class="text-3xl font-bold font-serif text-taikoBlue mb-2">Trade Enquiry Form</h3>
-            <p class="text-slate-500 mb-8 text-sm">Please complete the form below. Our compliance team will review and
+          <div class="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/60 shadow-lg text-left">
+            <h3 class="text-2xl sm:text-3xl font-bold font-serif text-taikoBlue mb-2">Trade Enquiry Form</h3>
+            <p class="text-slate-500 mb-6 sm:mb-8 text-xs sm:text-sm">Please complete the form below. Our compliance team will review and
               respond within 24 business hours.</p>
 
             <!-- Success Message -->
-            <div x-show="contactSuccess" class="text-center py-12" style="display: none;">
+            <div x-show="contactSuccess" class="text-center py-8 sm:py-12" style="display: none;">
               <div
-                class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                class="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-emerald-100 text-emerald-600 rounded-full mb-5 sm:mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h4 class="text-2xl font-bold font-serif text-taikoBlue mb-3">Enquiry Submitted</h4>
-              <p class="text-slate-600 max-w-sm mx-auto mb-8 text-sm leading-relaxed">
+              <h4 class="text-xl sm:text-2xl font-bold font-serif text-taikoBlue mb-3">Enquiry Submitted</h4>
+              <p class="text-slate-600 max-w-sm mx-auto mb-6 sm:mb-8 text-xs sm:text-sm leading-relaxed">
                 Thank you for contacting Taiko Food and Beverage Ltd. Our FMCG sourcing team will review your trade
                 requirements and reach out directly.
               </p>
@@ -310,9 +307,9 @@
             </div>
 
             <!-- Form Fields -->
-            <form x-show="!contactSuccess" @submit.prevent="contactSuccess = true" class="space-y-5">
+            <form x-show="!contactSuccess" @submit.prevent="contactSuccess = true" class="space-y-4 sm:space-y-5">
 
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                 <div>
                   <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Full
                     Name</label>
@@ -327,7 +324,7 @@
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                 <div>
                   <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Phone /
                     WhatsApp</label>
@@ -355,21 +352,21 @@
               <div>
                 <label
                   class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Message</label>
-                <textarea rows="5" required placeholder="Detail your specific requirements..."
+                <textarea rows="4" sm:rows="5" required placeholder="Detail your specific requirements..."
                   class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm resize-none"></textarea>
               </div>
 
-              <div class="flex items-center space-x-2 py-1">
+              <div class="flex items-start space-x-3 py-1">
                 <input type="checkbox" required id="consent-check"
-                  class="rounded border-slate-300 text-taikoGold focus:ring-taikoGold">
-                <label for="consent-check" class="text-xs text-slate-500 select-none">
+                  class="mt-0.5 rounded border-slate-300 text-taikoGold focus:ring-taikoGold flex-shrink-0">
+                <label for="consent-check" class="text-xs text-slate-500 select-none leading-normal">
                   I agree to the <a href="#" class="text-taikoGold underline hover:text-taikoGold-light">Privacy
                     Policy</a> regarding the handling of my trade data.
                 </label>
               </div>
 
               <button type="submit"
-                class="w-full py-4 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition duration-200 flex items-center justify-center space-x-2">
+                class="w-full py-3.5 sm:py-4 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition duration-200 flex items-center justify-center space-x-2">
                 <span>Submit Trade Enquiry</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd"
@@ -387,13 +384,13 @@
   </section>
 
   <!-- Assurance Credentials Stripe -->
-  <section class="bg-[#FFEED1] py-8 border-t border-slate-200/40">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center text-center">
+  <section class="bg-[#FFEED1] py-6 sm:py-8 border-t border-slate-200/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 items-center text-center">
 
         <!-- Col 1 -->
         <div
-          class="flex items-center justify-center space-x-2.5 text-[#1F3A60] font-bold text-xs uppercase tracking-wider">
+          class="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-[#1F3A60] font-bold text-[10px] sm:text-xs uppercase tracking-wider">
           <svg class="w-5 h-5 text-taikoGold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -404,7 +401,7 @@
 
         <!-- Col 2 -->
         <div
-          class="flex items-center justify-center space-x-2.5 text-[#1F3A60] font-bold text-xs uppercase tracking-wider">
+          class="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-[#1F3A60] font-bold text-[10px] sm:text-xs uppercase tracking-wider">
           <svg class="w-5 h-5 text-taikoGold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -415,7 +412,7 @@
 
         <!-- Col 3 -->
         <div
-          class="flex items-center justify-center space-x-2.5 text-[#1F3A60] font-bold text-xs uppercase tracking-wider">
+          class="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-[#1F3A60] font-bold text-[10px] sm:text-xs uppercase tracking-wider">
           <svg class="w-5 h-5 text-taikoGold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -426,7 +423,7 @@
 
         <!-- Col 4 -->
         <div
-          class="flex items-center justify-center space-x-2.5 text-[#1F3A60] font-bold text-xs uppercase tracking-wider">
+          class="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-[#1F3A60] font-bold text-[10px] sm:text-xs uppercase tracking-wider">
           <svg class="w-5 h-5 text-taikoGold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -440,8 +437,8 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-taikoBlue-dark text-slate-400 pt-20 pb-10 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <footer class="bg-taikoBlue-dark text-slate-400 pt-12 sm:pt-20 pb-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
         <!-- Brand Info -->
@@ -492,7 +489,7 @@
             <li>
               <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">VAT
                 NO.</span>
-              <span class="text-white font-medium tracking-wide">GB 504 0527 35</span>
+              <span class="text-white font-medium tracking-wide">504 0527 35</span>
             </li>
             <li>
               <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">COMPANIES

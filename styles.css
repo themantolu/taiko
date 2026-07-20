@@ -127,3 +127,156 @@ html.lenis {
     transform: translateY(-12px) rotate(-0.5deg);
   }
 }
+
+/* ==========================================================================
+   TAIKO BRAND DESIGN SYSTEM & MOBILE TYPOGRAPHY UTILITIES
+   ========================================================================== */
+
+/* Brand Typography Scale (Fluid & Mobile-Smart) */
+.brand-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 5vw + 1rem, 3.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+.brand-section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(1.65rem, 3.5vw + 0.5rem, 2.5rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.brand-card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2vw + 0.5rem, 1.35rem);
+  line-height: 1.35;
+}
+
+.brand-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.7rem, 1vw + 0.4rem, 0.875rem);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #C59B27;
+  display: block;
+}
+
+.brand-body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.875rem, 1.2vw + 0.55rem, 1.05rem);
+  line-height: 1.65;
+  color: #475569;
+}
+
+.brand-body-sm {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #64748B;
+}
+
+/* Component & Button Tokens */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #C59B27;
+  color: #FFFFFF;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(197, 155, 39, 0.25);
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  background-color: #E5C058;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(197, 155, 39, 0.35);
+}
+
+.btn-navy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0A1520;
+  color: #FFFFFF;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-navy:hover {
+  background-color: #142538;
+}
+
+.brand-badge {
+  display: inline-block;
+  background-color: #FFEED1;
+  color: #1F3A60;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
+}
+
+/* Layout Container Tokens */
+.brand-container {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .brand-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.brand-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .brand-section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}

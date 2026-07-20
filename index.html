@@ -215,8 +215,6 @@
         <a href="compliance.html"
           class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">Compliance
           & Export</a>
-        <a href="contact.html"
-          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">Contact</a>
       </nav>
 
       <!-- Desktop Call to Action -->
@@ -257,10 +255,8 @@
         <a @click="mobileMenuOpen = false" href="sourcing.html"
           class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">What We Source</a>
         <a @click="mobileMenuOpen = false" href="compliance.html"
-          class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">Compliance &
+          class="text-slate-300 hover:text-white font-medium text-lg pb-2">Compliance &
           Export</a>
-        <a @click="mobileMenuOpen = false" href="contact.html"
-          class="text-slate-300 hover:text-white font-medium text-lg pb-2">Contact</a>
         <button @click="mobileMenuOpen = false; modalOpen = true; selectedCategory = ''"
           class="w-full mt-4 py-3 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg transition text-center shadow-lg">
           Get in Touch
@@ -282,16 +278,16 @@
     </div>
 
     <!-- Hero Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-16 text-center md:text-left">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16 text-center md:text-left">
       <div class="max-w-3xl">
         <h1
-          class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-serif text-white tracking-tight leading-[1.1] mb-6 font-sans"
+          class="brand-hero-title mb-6"
           id="hero-title">
           Your Trusted Global <br class="hidden sm:inline">
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-taikoGold via-taikoGold-light to-white">FMCG
             Distribution</span> Partner
         </h1>
-        <p class="text-lg sm:text-xl text-slate-300 mb-8 font-light leading-relaxed max-w-2xl" id="hero-subtitle">
+        <p class="text-base sm:text-lg md:text-xl text-slate-300 mb-8 font-light leading-relaxed max-w-2xl" id="hero-subtitle">
           Connecting leading food, beverage, and consumer goods brands with global markets. Delivering absolute
           compliance, end-to-end logistics, and supply chain integrity.
         </p>
@@ -299,11 +295,11 @@
           class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
           id="hero-actions">
           <a href="contact.html"
-            class="w-full sm:w-auto px-8 py-4 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 text-center">
+            class="w-full sm:w-auto btn-gold text-center">
             Get in Touch
           </a>
           <a href="sourcing.html"
-            class="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-white/5 border border-white/20 hover:border-white text-white font-semibold rounded-lg transition-colors text-center">
+            class="w-full sm:w-auto px-8 py-3.5 bg-transparent hover:bg-white/5 border border-white/20 hover:border-white text-white font-semibold rounded-lg transition-colors text-center">
             What We Source
           </a>
         </div>
@@ -322,7 +318,7 @@
   </section>
 
   <!-- Quick Stats Bar -->
-  <section class="relative z-20 -mt-16 max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="relative z-20 -mt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div
       class="bg-taikoGold from-taikoGold-dark via-taikoGold to-taikoGold-light rounded-2xl shadow-2xl p-8 lg:p-10 border border-white/10">
       <div
@@ -408,13 +404,13 @@
       <div class="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-white/20 md:hidden"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="lg:w-2/3 xl:w-7/12">
 
         <!-- Section Header / Copy -->
         <div class="scroll-anim opacity-0 mb-12">
-          <span class="text-sm font-extrabold text-taikoGold uppercase tracking-[0.25em] font-sans">What We Do</span>
-          <h2 class="text-3xl sm:text-4xl lg:text-4xl font-bold font-serif text-taikoBlue mt-3 leading-tight">
+          <span class="brand-eyebrow">What We Do</span>
+          <h2 class="brand-section-title text-taikoBlue mt-2">
             We Source. We Document. We Deliver.
           </h2>
           <div class="mt-6 space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed font-light">
@@ -445,7 +441,7 @@
                       d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                   </svg>
                 </div>
-                <h4 class="text-white text-lg font-bold">Verified Sourcing</h4>
+                <h4 class="brand-card-title text-white">Verified Sourcing</h4>
                 <p class="text-slate-400 text-xs mt-3 leading-relaxed">
                   All goods are purchased from UK trade suppliers. We record batch codes and expiry dates for every case
                   before it leaves the warehouse.
@@ -466,7 +462,7 @@
                       d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h4 class="text-white text-lg font-bold">Full export documentation</h4>
+                <h4 class="brand-card-title text-white">Full export documentation</h4>
                 <p class="text-white/85 text-xs mt-3 leading-relaxed">
                   EORI-registered exporter. DEFRA certificates of free sale obtained where required. Documentation
                   prepared for NAFDAC registration and Nigeria's
@@ -488,7 +484,7 @@
                       d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                   </svg>
                 </div>
-                <h4 class="text-white text-lg font-bold">Sea freight to Lagos</h4>
+                <h4 class="brand-card-title text-white">Sea freight to Lagos</h4>
                 <p class="text-slate-400 text-xs mt-3 leading-relaxed">
                   Palletized consignments shipped on a scheduled basis. Pre-orders accepted against upcoming shipments.
                 </p>
@@ -503,22 +499,22 @@
   </section>
 
   <!-- Why Choose Taiko -->
-  <section id="why-us" class="py-24 bg-white relative overflow-hidden">
+  <section id="why-us" class="py-12 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
 
     <!-- Visual background accent lines -->
     <div
       class="absolute inset-y-0 right-0 w-1/2 bg-taikoGray/30 pointer-events-none skew-x-12 transform origin-top-right">
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 scroll-anim opacity-0">
-        <span class="text-sm font-extrabold text-taikoGold uppercase tracking-[0.25em]">Our Competitive Edge</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-4xl font-bold font-serif text-taikoBlue mt-3 leading-tight">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 scroll-anim opacity-0">
+        <span class="brand-eyebrow">Our Competitive Edge</span>
+        <h2 class="brand-section-title text-taikoBlue mt-2">
           Why Choose Taiko
         </h2>
-        <p class="text-slate-600 mt-4 text-base font-light leading-relaxed">
+        <p class="brand-body mt-4">
           Built on rigorous documentation from day one, we have developed a logistics process designed to optimize
           performance, eliminate delay risks, and build lasting international business partnerships.
         </p>
@@ -1200,7 +1196,6 @@
             <li><a href="sourcing.html" class="hover:text-taikoGold transition duration-150">What We Source</a></li>
             <li><a href="compliance.html" class="hover:text-taikoGold transition duration-150">Compliance & Export</a>
             </li>
-            <li><a href="contact.html" class="hover:text-taikoGold transition duration-150">Contact</a></li>
             <li><a href="#" class="hover:text-taikoGold transition duration-150">Privacy Policy</a></li>
           </ul>
         </div>
@@ -1212,7 +1207,7 @@
             <li>
               <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">VAT
                 NO.</span>
-              <span class="text-white font-medium tracking-wide">GB 504 0527 35</span>
+              <span class="text-white font-medium tracking-wide">504 0527 35</span>
             </li>
             <li>
               <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">COMPANIES
