@@ -280,22 +280,20 @@
     <!-- Hero Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16 text-center md:text-left">
       <div class="max-w-3xl">
-        <h1
-          class="brand-hero-title mb-6"
-          id="hero-title">
+        <h1 class="brand-hero-title mb-6" id="hero-title">
           Your Trusted Global <br class="hidden sm:inline">
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-taikoGold via-taikoGold-light to-white">FMCG
             Distribution</span> Partner
         </h1>
-        <p class="text-base sm:text-lg md:text-xl text-slate-300 mb-8 font-light leading-relaxed max-w-2xl" id="hero-subtitle">
+        <p class="text-base sm:text-lg md:text-xl text-slate-300 mb-8 font-light leading-relaxed max-w-2xl"
+          id="hero-subtitle">
           Connecting leading food, beverage, and consumer goods brands with global markets. Delivering absolute
           compliance, end-to-end logistics, and supply chain integrity.
         </p>
         <div
           class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
           id="hero-actions">
-          <a href="contact.html"
-            class="w-full sm:w-auto btn-gold text-center">
+          <a href="contact.html" class="w-full sm:w-auto btn-gold text-center">
             Get in Touch
           </a>
           <a href="sourcing.html"
@@ -646,6 +644,8 @@
         </button>
       </div>
 
+
+
       <!-- Categories Container - Mobile Slider, Desktop Grid -->
 
       <!-- Desktop Grid Layout (hidden on mobile, visible from md) -->
@@ -983,9 +983,75 @@
         <div class="swiper-pagination mt-6"></div>
       </div>
 
+      <!-- Brand Logos Infinite Carousel (Using images in brands/ folder) -->
+      <div class="mt-12 overflow-hidden relative w-full py-8 border-y border-white/10 bg-[#071018]/60 backdrop-blur-sm rounded-2xl">
+        <!-- Edge Gradients for smooth fade effect -->
+        <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0A1520] to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0A1520] to-transparent z-10 pointer-events-none"></div>
+
+        <div class="animate-marquee flex items-center space-x-8 sm:space-x-10">
+          <!-- Marquee Track 1 -->
+          <div class="flex items-center space-x-8 sm:space-x-10 flex-shrink-0">
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/dettol.png" alt="Dettol Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/dove.jpg" alt="Dove Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/fairy.jpg" alt="Fairy Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/gillette.jpg" alt="Gillette Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/huggies.jpg" alt="Huggies Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/lenor.jpg" alt="Lenor Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/listerine.jpg" alt="Listerine Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/oral b.jpg" alt="Oral B Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+          </div>
+
+          <!-- Marquee Track 2 (Exact Duplicate for Seamless Loop) -->
+          <div class="flex items-center space-x-8 sm:space-x-10 flex-shrink-0" aria-hidden="true">
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/dettol.png" alt="Dettol Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/dove.jpg" alt="Dove Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/fairy.jpg" alt="Fairy Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/gillette.jpg" alt="Gillette Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/huggies.jpg" alt="Huggies Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/lenor.jpg" alt="Lenor Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/listerine.jpg" alt="Listerine Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+            <div class="h-28 w-52 sm:w-56 px-6 py-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl flex-shrink-0">
+              <img src="brands/oral b.jpg" alt="Oral B Logo" class="max-h-20 max-w-full object-contain">
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Brand & Wholesale Partner Banner -->
       <div
         class="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row md:items-center justify-between gap-6 scroll-anim opacity-0">
+
         <div class="flex items-center space-x-4">
           <div
             class="w-10 h-10 rounded-lg bg-taikoGold/10 flex items-center justify-center text-taikoGold flex-shrink-0">
@@ -1125,6 +1191,7 @@
     </div>
   </section>
 
+
   <!-- CTA Section: Looking for a reliable UK export partner? -->
   <section id="contact" class="grid grid-cols-1 lg:grid-cols-2 bg-[#0A1520] overflow-hidden min-h-[500px]">
 
@@ -1196,7 +1263,8 @@
             <li><a href="sourcing.html" class="hover:text-taikoGold transition duration-150">What We Source</a></li>
             <li><a href="compliance.html" class="hover:text-taikoGold transition duration-150">Compliance & Export</a>
             </li>
-            <li><a href="#" class="hover:text-taikoGold transition duration-150">Privacy Policy</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-taikoGold transition duration-150">Privacy Policy</a>
+            </li>
           </ul>
         </div>
 
@@ -1227,17 +1295,24 @@
           </ul>
         </div>
 
-        <!-- Registered Office -->
+        <!-- Registered Office & Warehouse -->
         <div class="space-y-6">
-          <h4 class="text-white text-sm font-extrabold uppercase tracking-wider font-sans">Registered Office</h4>
-          <div class="text-sm font-light text-slate-400 leading-relaxed space-y-1">
-            <p class="text-white font-medium">Taiko Food and Beverage Ltd</p>
-            <p>7 Crete Hall Road</p>
-            <p>Northfleet, Kent</p>
-            <p>DA11 9GP</p>
-            <p>United Kingdom</p>
+          <div>
+            <h4 class="text-white text-sm font-extrabold uppercase tracking-wider font-sans mb-3">Registered Office</h4>
+            <div class="text-sm font-light text-slate-400 leading-relaxed space-y-0.5">
+              <p class="text-[#F1F5F9] font-medium">Taiko Food and Beverage Ltd</p>
+              <p>7 Crete Hall Road, Northfleet</p>
+              <p>Kent, DA11 9GP, UK</p>
+            </div>
           </div>
-          <div class="pt-2">
+          <div>
+            <h4 class="text-white text-sm font-extrabold uppercase tracking-wider font-sans mb-3">Warehouse</h4>
+            <div class="text-sm font-light text-slate-400 leading-relaxed space-y-0.5">
+              <p>Unit 9, Cromwell Industrial Estate</p>
+              <p>London, E10 7QZ, UK</p>
+            </div>
+          </div>
+          <div class="pt-1">
             <a href="https://maps.google.com/?q=7+Crete+Hall+Road,+Northfleet,+Kent,+DA11+9GP" target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center space-x-2 text-taikoGold hover:text-taikoGold-light transition duration-150 text-sm font-medium">
@@ -1259,8 +1334,8 @@
         class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-light space-y-4 sm:space-y-0">
         <p>&copy; 2026 Taiko Food and Beverage Ltd. All rights reserved.</p>
         <div class="flex items-center space-x-6">
-          <a href="#" class="hover:text-taikoGold transition duration-150">Privacy Policy</a>
-          <a href="#" class="hover:text-taikoGold transition duration-150">Terms of Use</a>
+          <a href="privacy-policy.html" class="hover:text-taikoGold transition duration-150">Privacy Policy</a>
+          <a href="terms-of-use.html" class="hover:text-taikoGold transition duration-150">Terms of Use</a>
         </div>
       </div>
 

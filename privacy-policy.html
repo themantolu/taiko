@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Taiko Food & Beverage</title>
+  <meta name="description"
+    content="Privacy Policy for Taiko Food and Beverage Ltd in compliance with UK GDPR and the Data Protection Act 2018.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/fav.jpg">
+
+  <!-- Google Fonts: Outfit & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            taikoBlue: {
+              DEFAULT: '#0A1520',
+              light: '#142538',
+              dark: '#050B10',
+              accent: '#1E3E62'
+            },
+            taikoGold: {
+              DEFAULT: '#C59B27',
+              light: '#E5C058',
+              dark: '#967417',
+              muted: '#A98A3C'
+            },
+            taikoBeige: '#FBF9F4',
+            taikoGray: '#F3F4F6'
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Alpine.js (Deferred) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="{ mobileMenuOpen: false, modalOpen: false, modalSuccess: false, selectedCategory: '' }"
+  class="bg-taikoBeige text-slate-800 antialiased overflow-x-hidden font-sans">
+
+  <!-- Inquiry Modal (Alpine.js) -->
+  <div x-show="modalOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-taikoBlue/80 backdrop-blur-md"
+    style="display: none;">
+    <div @click.away="modalOpen = false"
+      class="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-taikoGold/20"
+      x-transition:enter="transition ease-out duration-300 transform"
+      x-transition:enter-start="opacity-0 scale-95 translate-y-4"
+      x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-200 transform"
+      x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+      x-transition:leave-end="opacity-0 scale-95 translate-y-4">
+
+      <!-- Top Accent Bar -->
+      <div class="h-2 bg-gradient-to-r from-taikoGold to-taikoGold-light"></div>
+
+      <!-- Close Button -->
+      <button @click="modalOpen = false"
+        class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition duration-150">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div class="p-8">
+        <h3 class="text-3xl font-bold font-serif text-taikoBlue mb-2">Get in Touch</h3>
+        <p class="text-slate-600 mb-6 text-sm">Send us an inquiry and our FMCG trade specialists will respond within 24
+          hours.</p>
+
+        <!-- Form Success State -->
+        <div x-show="modalSuccess" class="text-center py-8">
+          <div
+            class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h4 class="text-2xl font-bold font-serif text-taikoBlue mb-2">Inquiry Sent Successfully</h4>
+          <p class="text-slate-600 max-w-sm mx-auto mb-6 text-sm">Thank you for contacting Taiko. Our team will review
+            your inquiry and get back to you shortly.</p>
+          <button @click="modalOpen = false; modalSuccess = false"
+            class="px-6 py-2 bg-taikoBlue hover:bg-taikoBlue-light text-white rounded-lg transition duration-200">
+            Close Window
+          </button>
+        </div>
+
+        <!-- Form Fields -->
+        <form x-show="!modalSuccess" @submit.prevent="modalSuccess = true" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Your Name</label>
+              <input type="text" required
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Email
+                Address</label>
+              <input type="email" required
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Company
+                Name</label>
+              <input type="text"
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Interest
+                Category</label>
+              <select x-model="selectedCategory"
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm bg-white">
+                <option value="">General Inquiry</option>
+                <option value="drinks">Soft Drinks & Water</option>
+                <option value="confectionery">Confectionery & Snacks</option>
+                <option value="alcohol">Beers, Wines & Spirits</option>
+                <option value="toiletries">Toiletries & Cosmetics</option>
+                <option value="grocery">Grocery & Ambient</option>
+                <option value="baby">Baby & Child Care</option>
+                <option value="household">Household & Cleaning</option>
+                <option value="pet">Pet Food & Care</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Message</label>
+            <textarea rows="4" required placeholder="Describe your sourcing or export requirements..."
+              class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-taikoGold focus:ring-1 focus:ring-taikoGold outline-none transition text-sm resize-none"></textarea>
+          </div>
+
+          <div class="flex items-center space-x-2 py-1">
+            <input type="checkbox" required id="agree"
+              class="rounded border-slate-300 text-taikoGold focus:ring-taikoGold">
+            <label for="agree" class="text-xs text-slate-500">I consent to Taiko processing my details to handle this
+              request.</label>
+          </div>
+
+          <button type="submit"
+            class="w-full py-4 bg-taikoBlue hover:bg-taikoBlue-light text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition duration-200 flex items-center justify-center space-x-2">
+            <span>Send Inquiry</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header id="header-nav"
+    class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-6 border-b border-transparent bg-taikoBlue/95 backdrop-blur-md border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center group focus:outline-none">
+        <img src="Images/taiko logo.png" alt="Taiko Logo"
+          class="h-10 w-auto object-contain transition duration-300 group-hover:scale-105">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+        <a href="index.html"
+          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">Home</a>
+        <a href="about.html"
+          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">About</a>
+        <a href="sourcing.html"
+          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">What
+          We Source</a>
+        <a href="compliance.html"
+          class="text-slate-300 hover:text-white relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-taikoGold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left transition duration-200">Compliance
+          & Export</a>
+      </nav>
+
+      <!-- Desktop Call to Action -->
+      <div class="hidden md:flex items-center">
+        <a href="contact.html"
+          class="px-6 py-2.5 bg-taikoGold hover:bg-taikoGold-light text-white text-sm font-semibold rounded-lg transition duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 transform">
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button @click="mobileMenuOpen = !mobileMenuOpen"
+        class="md:hidden text-white hover:text-taikoGold focus:outline-none p-1.5 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+            d="M4 6h16M4 12h16M4 18h16" />
+          <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+            d="M6 18L18 6M6 6l12 12" style="display: none;" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 -translate-y-6" x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-6"
+      class="md:hidden absolute top-full left-0 right-0 bg-taikoBlue border-b border-white/10 shadow-2xl"
+      style="display: none;">
+      <div class="px-6 py-8 space-y-4 flex flex-col">
+        <a @click="mobileMenuOpen = false" href="index.html"
+          class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">Home</a>
+        <a @click="mobileMenuOpen = false" href="about.html"
+          class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">About</a>
+        <a @click="mobileMenuOpen = false" href="sourcing.html"
+          class="text-slate-300 hover:text-white font-medium text-lg border-b border-white/5 pb-2">What We Source</a>
+        <a @click="mobileMenuOpen = false" href="compliance.html"
+          class="text-slate-300 hover:text-white font-medium text-lg pb-2">Compliance & Export</a>
+        <a @click="mobileMenuOpen = false" href="contact.html"
+          class="w-full mt-4 py-3 bg-taikoGold hover:bg-taikoGold-light text-white font-semibold rounded-lg transition text-center shadow-lg">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="relative pt-36 pb-16 sm:pt-40 sm:pb-20 bg-taikoBlue overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-left">
+      <span class="inline-block text-taikoGold font-bold text-xs uppercase tracking-widest mb-3">
+        Legal & Compliance
+      </span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+        Privacy Policy
+      </h1>
+      <p class="text-slate-400 text-sm sm:text-base mt-3 font-light">
+        Last Updated: July 2026
+      </p>
+    </div>
+  </section>
+
+  <!-- Privacy Policy Content Section -->
+  <main class="py-12 sm:py-20 bg-taikoBeige">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+
+      <div
+        class=" p-8 sm:p-12 lg:p-14 rounded-2xl border  space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base font-light">
+
+        <!-- Section 1 -->
+        <section class="space-y-4">
+          <h2
+            class="text-xl sm:text-2xl font-bold font-serif text-taikoBlue border-b border-slate-100 pb-3 flex items-center gap-3">
+            <span
+              class="w-8 h-8 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center text-sm font-sans font-extrabold">1</span>
+            Introduction
+          </h2>
+          <p>
+            Taiko Food and Beverage Ltd ("we", "us", "our") is committed to protecting and respecting your privacy. This
+            privacy policy sets out the basis on which any personal data we collect from you, or that you provide to us,
+            will be processed by us.
+          </p>
+          <p>
+            We operate in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection
+            Act 2018. For the purpose of data protection laws, the data controller is Taiko Food and Beverage Ltd,
+            registered office at 7 Crete Hall Road, Northfleet, Kent DA11 9GP, United Kingdom.
+          </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="space-y-4">
+          <h2
+            class="text-xl sm:text-2xl font-bold font-serif text-taikoBlue border-b border-slate-100 pb-3 flex items-center gap-3">
+            <span
+              class="w-8 h-8 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center text-sm font-sans font-extrabold">2</span>
+            Information We Collect
+          </h2>
+          <p>
+            We may collect and process the following information about you:
+          </p>
+          <ul class="space-y-3 pl-4 sm:pl-6 list-disc list-outside text-slate-600">
+            <li>
+              <strong class="text-slate-800 font-medium">Information you give us:</strong> By filling in forms on our
+              site, sending us emails, or contacting us through other B2B trade channels. This includes your name,
+              company details, email address, phone number, and any message text.
+            </li>
+            <li>
+              <strong class="text-slate-800 font-medium">Technical information:</strong> Including the IP address used
+              to connect your computer to the internet, browser type and version, and operating system.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="space-y-4">
+          <h2
+            class="text-xl sm:text-2xl font-bold font-serif text-taikoBlue border-b border-slate-100 pb-3 flex items-center gap-3">
+            <span
+              class="w-8 h-8 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center text-sm font-sans font-extrabold">3</span>
+            How We Use the Information
+          </h2>
+          <p>
+            We use information held about you in the following ways:
+          </p>
+          <ul class="space-y-3 pl-4 sm:pl-6 list-disc list-outside text-slate-600">
+            <li>To process your B2B trade inquiries, pre-orders, and distribution checks.</li>
+            <li>To fulfill our obligations arising from any export or supply agreements entered into between you and us.
+            </li>
+            <li>To provide you with information about our upcoming consignments and stock lists.</li>
+            <li>To administer our site and for internal operational/security checks.</li>
+          </ul>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="space-y-4">
+          <h2
+            class="text-xl sm:text-2xl font-bold font-serif text-taikoBlue border-b border-slate-100 pb-3 flex items-center gap-3">
+            <span
+              class="w-8 h-8 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center text-sm font-sans font-extrabold">4</span>
+            Disclosure of Your Information
+          </h2>
+          <p>
+            We do not sell or rent your data. We may share your information with selected third parties, including:
+          </p>
+          <ul class="space-y-3 pl-4 sm:pl-6 list-disc list-outside text-slate-600">
+            <li>
+              <strong class="text-slate-800 font-medium">Logistics partners and freight forwarders:</strong> For the
+              purposes of coordinating container consolidation and shipping clearance.
+            </li>
+            <li>
+              <strong class="text-slate-800 font-medium">Regulatory authorities:</strong> HM Revenue & Customs (HMRC),
+              DEFRA, and Nigerian Customs (NICIS II/NAFDAC) where required for legal and export compliance paperwork.
+            </li>
+            <li>
+              <strong class="text-slate-800 font-medium">Professional advisers:</strong> Including lawyers, bankers,
+              auditors, and insurers.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="space-y-4">
+          <h2
+            class="text-xl sm:text-2xl font-bold font-serif text-taikoBlue border-b border-slate-100 pb-3 flex items-center gap-3">
+            <span
+              class="w-8 h-8 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center text-sm font-sans font-extrabold">5</span>
+            Your Rights
+          </h2>
+          <p>
+            Under UK GDPR, you have the right to access, rectify, erase, or restrict processing of your personal data.
+            You also have the right to data portability.
+          </p>
+          <div
+            class="p-4 sm:p-5 rounded-xl bg-taikoBeige border border-slate-200/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <p class="font-medium text-slate-800 text-xs sm:text-sm">Have questions about your personal data?</p>
+              <p class="text-xs text-slate-500 mt-0.5">Contact our compliance officer directly.</p>
+            </div>
+            <a href="mailto:info@taikofoodandbeverage.co.uk"
+              class="px-5 py-2.5 bg-taikoBlue hover:bg-taikoBlue-light text-white text-xs font-semibold rounded-lg transition duration-150 whitespace-nowrap">
+              Contact Privacy Team
+            </a>
+          </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="space-y-4">
+          <h2
+            class="text-xl sm:text-2xl font-bold font-serif text-taikoBlue border-b border-slate-100 pb-3 flex items-center gap-3">
+            <span
+              class="w-8 h-8 rounded-lg bg-taikoGold/10 text-taikoGold flex items-center justify-center text-sm font-sans font-extrabold">6</span>
+            Changes to Our Privacy Policy
+          </h2>
+          <p>
+            Any changes we may make to our privacy policy in the future will be posted on this page. Please check back
+            frequently to see any updates.
+          </p>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-taikoBlue text-slate-400 pt-16 pb-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12">
+
+        <!-- Column 1: Brand Info -->
+        <div class="space-y-4">
+          <a href="index.html" class="block">
+            <img src="Images/taiko logo.png" alt="Taiko Logo" class="h-10 w-auto object-contain">
+          </a>
+          <p class="text-xs leading-relaxed font-light">
+            Taiko Food and Beverage Ltd is a UK-registered export trader supplying genuine British consumer goods across
+            West Africa.
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="space-y-4">
+          <h4 class="text-white text-sm font-extrabold uppercase tracking-wider font-sans">Quick Links</h4>
+          <ul class="space-y-2.5 text-xs font-light">
+            <li><a href="index.html" class="hover:text-taikoGold transition duration-150">Home</a></li>
+            <li><a href="about.html" class="hover:text-taikoGold transition duration-150">About Us</a></li>
+            <li><a href="sourcing.html" class="hover:text-taikoGold transition duration-150">Trade Sourcing</a></li>
+            <li><a href="compliance.html" class="hover:text-taikoGold transition duration-150">Compliance & Export</a>
+            </li>
+            <li><a href="contact.html" class="hover:text-taikoGold transition duration-150">Contact Us</a></li>
+            <li><a href="privacy-policy.html" class="text-taikoGold font-medium">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Our Credentials -->
+        <div class="space-y-4">
+          <h4 class="text-white text-sm font-extrabold uppercase tracking-wider font-sans">Our Credentials</h4>
+          <ul class="space-y-3 text-xs font-light">
+            <li>
+              <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">VAT
+                NO.</span>
+              <span class="text-white font-medium tracking-wide">504 0527 35</span>
+            </li>
+            <li>
+              <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">COMPANIES
+                HOUSE NO.</span>
+              <span class="text-white font-medium tracking-wide">15881752</span>
+            </li>
+            <li>
+              <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">EORI
+                NUMBER</span>
+              <span class="text-white font-medium tracking-wide">GB099647052000</span>
+            </li>
+            <li>
+              <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-0.5">DEFRA
+                STATUS</span>
+              <span class="text-taikoGold font-bold tracking-wider">FREE SALE COMPLIANT</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Registered Office & Warehouse -->
+        <div class="space-y-6">
+          <div>
+            <h4 class="text-white text-sm font-extrabold uppercase tracking-wider font-sans mb-2">Registered Office</h4>
+            <div class="text-xs font-light text-slate-400 leading-relaxed space-y-0.5">
+              <p class="text-[#F1F5F9] font-medium">Taiko Food and Beverage Ltd</p>
+              <p>7 Crete Hall Road, Northfleet</p>
+              <p>Kent, DA11 9GP, UK</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-white text-sm font-extrabold uppercase tracking-wider font-sans mb-2">Warehouse</h4>
+            <div class="text-xs font-light text-slate-400 leading-relaxed space-y-0.5">
+              <p>Unit 9, Cromwell Industrial Estate</p>
+              <p>London, E10 7QZ, UK</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div
+        class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-light space-y-4 sm:space-y-0">
+        <p>&copy; 2026 Taiko Food and Beverage Ltd. All rights reserved.</p>
+        <div class="flex items-center space-x-6">
+          <a href="privacy-policy.html" class="hover:text-taikoGold transition duration-150">Privacy Policy</a>
+          <a href="terms-of-use.html" class="hover:text-taikoGold transition duration-150">Terms of Use</a>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Header Scroll Effect JS -->
+  <script>
+    window.addEventListener('scroll', function () {
+      const header = document.getElementById('header-nav');
+      if (window.scrollY > 50) {
+        header.classList.add('bg-taikoBlue/95', 'backdrop-blur-md', 'border-white/10', 'py-4');
+        header.classList.remove('py-6', 'border-transparent');
+      } else {
+        header.classList.remove('bg-taikoBlue/95', 'backdrop-blur-md', 'border-white/10', 'py-4');
+        header.classList.add('py-6', 'border-transparent');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
